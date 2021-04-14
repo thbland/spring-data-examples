@@ -23,6 +23,7 @@ import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureJdbc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -34,6 +35,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = MyBatisConfiguration.class)
 @AutoConfigureJdbc
 @MybatisTest
+@Sql(scripts = "/schema.sql")
 public class MyBatisTests {
 
 	@Autowired LegoSetRepository repository;

@@ -19,10 +19,15 @@ import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration;
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.data.relational.core.mapping.event.BeforeSaveCallback;
 import org.springframework.data.relational.core.mapping.event.RelationalEvent;
+import org.springframework.jdbc.datasource.init.DataSourceInitializer;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+
+import javax.sql.DataSource;
 
 /**
  * Contains infrastructure necessary for creating repositories, listeners and EntityCallbacks.

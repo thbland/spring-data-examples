@@ -98,18 +98,4 @@ public class AggregateConfiguration extends AbstractJdbcConfiguration {
 	public NamedParameterJdbcTemplate namedParameterJdbcTemplate(JdbcOperations operations) {
 		return new NamedParameterJdbcTemplate(operations);
 	}
-
-	@Bean
-	DataSourceInitializer initializer(DataSource dataSource) {
-
-		DataSourceInitializer initializer = new DataSourceInitializer();
-		initializer.setDataSource(dataSource);
-
-		ClassPathResource script = new ClassPathResource("schema.sql");
-		ResourceDatabasePopulator populator = new ResourceDatabasePopulator(script);
-		initializer.setDatabasePopulator(populator);
-
-		return initializer;
-	}
-
 }

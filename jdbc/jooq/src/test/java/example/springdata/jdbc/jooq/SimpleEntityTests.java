@@ -26,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureJdbc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -38,6 +39,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = CategoryConfiguration.class)
 @AutoConfigureJdbc
 @ComponentScan
+@Sql("/schema.sql")
 public class SimpleEntityTests {
 
 	@Autowired CategoryRepository repository;
